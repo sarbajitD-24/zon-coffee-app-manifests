@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
   name: nginx-deployment
 spec:
-  replicas: 3 # Number of desired replicas (pods)
+  replicas: 5 # Number of desired replicas (pods)
   selector:
     matchLabels:
       app: zon # Label to select pods for this deployment
