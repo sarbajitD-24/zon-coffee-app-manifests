@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nginx-deployment
+spec:
+  replicas: 4 # Number of desired replicas (pods)
+  selector:
+    matchLabels:
+      app: zon # Label to select pods for this deployment
+  template:
+    metadata:
+      labels:
+        app: zon # Label for pods created by this deployment
+    spec:
+      containers:
+      - name: nginx-zon-coffee
+        image: 628809433177.dkr.ecr.ap-south-1.amazonaws.com/zon-coffee:latest # zon coffee app container image (AWS ECR)
+        ports:
+        - containerPort: 80
